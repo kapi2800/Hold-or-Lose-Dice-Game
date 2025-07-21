@@ -217,7 +217,6 @@ main {
   z-index: 2000;
 }
 
-
 .rules {
   background: rgba(0, 0, 0, 0.5);
   padding: 3rem;
@@ -235,4 +234,36 @@ main {
 .rules h3 {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+}
+
+.game-title {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #ffffff;
+  letter-spacing: 2px;
+  z-index: 10;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.social-links {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.social-links img {
+  width: 2rem;
+  height: 2rem; /* makes icon white */
+  transition: transform 0.2s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.2);
 }
