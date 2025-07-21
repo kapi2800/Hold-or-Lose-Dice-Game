@@ -267,3 +267,11 @@ main {
 .social-links img:hover {
   transform: scale(1.2);
 }
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  font-size: 0.25rem;
+  color: rgba(0, 0, 0, 0.4); 
+  text-align: center;
+}
