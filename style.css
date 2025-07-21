@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  height: 100vh;
+  background: radial-gradient(circle at top left, #5c2a80, #7c2b4c, #b04e0a);
+  background-size: 200% 200%;
+  animation: gradientFlow 20s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+main {
+  width: 95%;
+  max-width: 1000px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Player Sections */
+.player {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.player--1 {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player--active {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2rem;
+}
+
+.player--winner {
+  background: #36b8b4 !important;
+  color: #272525;
+  border-radius: 2rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.score {
+  font-size: 3rem;
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+/* Current Box */
+.current {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  width: 80%;
+}
+
+.current-label {
+  font-size: 0.8rem;
+  color: #ddd;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.current-score {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Buttons */
+.btn {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Press Start 2P', cursive;
+  position: absolute;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ✅ Individual Button Positioning */
+.btn--new {
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn--roll {
+  bottom: 20rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: linear-gradient(to right, #ef6b8ae0, #ff4b2b);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 65, 108, 0.4);
+}
+
+.btn--hold {
+  bottom: 16rem;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* Dice */
+.dice {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 8rem;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+}
+
+/* Confetti */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.confetti {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  animation: fall 1s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    top: 100vh;
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.winner-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #f9f871;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+  z-index: 100;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.hidden {
+  display: none;
+}
+
+.rules-container {
+  position: fixed;
+  bottom: 4rem;
+  left: 2rem;
+  max-width: 300px;
+  z-index: 2000;
+}
+
+
+.rules {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  border-radius: 1rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.rules ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.rules h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
